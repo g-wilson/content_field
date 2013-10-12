@@ -101,10 +101,16 @@
 		}
 
 		public function processData(StdClass $settings, StdClass $data, $entry_id = null) {
-			return (object)array();
+
+			return (object)array(
+				'handle'			=> $data->handle,
+				'value'				=> $data->value,
+				'value_formatted'	=> $data->value_formatted
+			);
 		}
 
 		public function processRowData(StdClass $settings, StdClass $data, $entry_id = null) {
+
 			if ($settings->{'text-formatter'} != 'none') {
 				$tfm = new TextformatterManager();
 				$formatter = $tfm->create($settings->{'text-formatter'});
@@ -116,11 +122,11 @@
 				$formatted = General::sanitize($data->value);
 			}
 
-			return (object)array(
-				'handle'			=> null,
+			return $this->sanitizeData($settings, array(
+				'handle'			=> General::createHandle($data->value),
 				'value'				=> $data->value,
 				'value_formatted'	=> $formatted
-			);
+			));
 		}
 
 		public function sanitizeData(StdClass $settings, $data) {
