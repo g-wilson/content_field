@@ -6,7 +6,6 @@
 
 	require_once __DIR__ . '/libs/message-stack.php';
 	require_once __DIR__ . '/libs/content-type.php';
-	require_once __DIR__ . '/libs/text-content-type.php';
 
 	class Extension_Content_Field extends Extension {
 		/**

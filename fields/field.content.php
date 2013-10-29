@@ -8,7 +8,9 @@
 	require_once FACE . '/interface.importablefield.php';
 	require_once __DIR__ . '/../libs/message-stack.php';
 	require_once __DIR__ . '/../libs/content-type.php';
+	// TODO: get dynamically from folder
 	require_once __DIR__ . '/../libs/text-content-type.php';
+	require_once __DIR__ . '/../libs/image-content-type.php';
 
 	class FieldContent extends Field implements ExportableField, ImportableField {
 		protected $errors;
@@ -47,8 +49,10 @@
 		 * Fetch a list of installed content types.
 		 */
 		public function getInstances() {
+			// TODO: get dynamically from folder
 			$instances = (object)array(
-				'text-content'	=> new TextContentType()
+				'text-content'	=> new TextContentType(),
+				'image-block'	=> new ImageBlockContentType()
 			);
 
 			Symphony::ExtensionManager()->notifyMembers(

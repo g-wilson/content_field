@@ -154,6 +154,6 @@
 		}
 
 		public function appendFormattedElement(XMLElement $wrapper, StdClass $settings, StdClass $data, $entry_id = null) {
-			$wrapper->setValue($data->value_formatted);
+			$wrapper->setValue(html_entity_decode($data->value_formatted));
 		}
 	}

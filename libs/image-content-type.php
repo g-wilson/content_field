@@ -163,22 +163,7 @@
 
     public function processData(StdClass $settings, StdClass $data, $entry_id = null) {
       
-      if ( $data->file['error'] == 4 ) {    // "remove file" chosen, no replacement uploaded
-
-        // Delete the old file
-        General::deleteFile($data->abs_path . '/' . $data->old_file);
-
-        $result = array(
-          'file' => null,
-          'size' => null,
-          'mimetype' => null,
-          'abs_path' => null,
-          'rel_path' => null,
-          'position' => $data->position,
-          'caption' => $data->caption
-        );
-
-      } elseif ( isset($data->file['name']) ) {   // New file submitted, upload + replace
+      if ( isset($data->file['name']) ) {   // New file submitted, upload + replace
 
         // Write directory
         $abs_path = DOCROOT . '/' . trim($settings->{'destination'}, '/');
