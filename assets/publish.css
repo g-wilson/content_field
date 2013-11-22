@@ -4,6 +4,9 @@ div.field.field-content > label {
 div.field.field-content > div.frame {
 	margin-bottom: 15px;
 }
+div.field.field-content div.content {
+	padding-bottom: 10px;
+}
 div.field.field-content textarea.size-auto {
 	min-height: 1.8em;
 	overflow-y: hidden;
@@ -28,4 +31,8 @@ div.field.field-content textarea.size-huge {
 	height: 19em;
 	min-height: 4em;
 	resize: vertical;
+}
+.field-content iframe {
+  width: 100%;
+  max-height: 250px;
 }

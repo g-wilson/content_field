@@ -11,6 +11,7 @@
 		public function appendSettingsHeaders(HTMLPage $page) {
 			$url = URL . '/extensions/content_field/assets';
 			$page->addStylesheetToHead($url . '/settings.css', 'screen');
+
 		}
 
 		public function appendSettingsInterface(XMLElement $wrapper, $field_name, StdClass $settings = null, MessageStack $errors) {
@@ -81,6 +82,9 @@
 			$url = URL . '/extensions/content_field/assets';
 			$page->addStylesheetToHead($url . '/publish.css', 'screen');
 			$page->addScriptToHead($url . '/publish.js');
+			$page->addScriptToHead($url . '/markdown/markdown.js');
+			$page->addScriptToHead($url . '/markdown/markdown.live.js');
+			$page->addStylesheetToHead($url . '/markdown/markdown.live.css', 'screen');
 		}
 
 		public function appendPublishInterface(XMLElement $wrapper, $field_name, StdClass $settings, StdClass $data, MessageStack $errors, $entry_id = null) {

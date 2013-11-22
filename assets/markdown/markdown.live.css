@@ -1,0 +1,120 @@
+.markdown-live_container {
+  overflow: hidden;
+}
+.markdown-live_container *,
+.markdown-live_container *:before,
+.markdown-live_container *:after {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.markdown-live_container textarea {
+  margin: 0;
+}
+
+.md_preview_contain {
+  display: none;
+}
+
+.md_preview {
+  padding: 20px;
+  min-height: 100px;
+  max-height: 400px;
+  overflow: auto;
+  font-family: sans-serif;
+  font-size: 130%;
+  background: #FFF;
+  border: 1px solid #f4f4f4;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.md_preview h2,
+.md_preview h1 {
+  margin: 5px 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: transparent;
+  color: #000;
+  font-weight: bold;
+}
+.md_preview h1 {
+  font-size: 1.7em;
+  line-height: 1em;
+  margin-bottom: 10px;
+}
+
+#contents .md_preview h2 {
+  font-size: 1.4em;
+  margin-bottom: 10px;
+  padding: 0;
+}
+
+.md_preview p {
+  margin: 0 0 10px 0;
+}
+
+.md_preview blockquote {
+  color: #999;
+  font-style: italic;
+}
+
+.md_preview ol {
+  list-style-type: decimal;
+}
+.md_preview ul {
+  list-style-type: disc;
+}
+.md_preview ol, ul {
+  margin: 0;
+  padding-left: 15px;
+}
+
+
+@media screen and (min-width: 800px) {
+
+  .tab-group .field {
+    overflow: hidden;
+  }
+  .tab-group .field label {
+    overflow: hidden;
+  }
+
+  .md_button {
+    display: none;
+  }
+
+  .md_preview_contain {
+    display: block;
+    width: 50%;
+    float: left;
+    padding-left: 10px;
+  }
+
+  .md_preview {
+    border: none;
+    border-radius: 0;
+    margin: 0;
+  }
+
+  textarea.markdown_live,
+  div.field.field-content textarea.size-medium.markdown_live {
+    width: 50%;
+    float: left;
+    clear: both;
+  }
+}
+
+@media screen and (max-width: 800px) {
+
+  .field-content .group .column {
+    padding-left: 0;
+    width: 100%;
+  }
+
+  .field-content .group > * {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+}
